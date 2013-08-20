@@ -1,3 +1,10 @@
-The OpenShift `ruby` cartridge documentation can be found at:
+# Discourse Openshift Quickstart
 
-https://github.com/openshift/origin-server/tree/master/cartridges/openshift-origin-cartridge-ruby/README.md
+## Setup
+
+rhc app create discourse ruby-1.9
+rhc cartridge add postgresql-9.2 -a discourse
+
+## Update
+
+git remote add discourse git@github.com:discourse/discourse.git
