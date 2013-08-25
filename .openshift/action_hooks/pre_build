@@ -4,7 +4,7 @@
 # before the build step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
 
-set -x
+set -e
 
 pushd "$OPENSHIFT_REPO_DIR" > /dev/null
 echo "Create config files..."

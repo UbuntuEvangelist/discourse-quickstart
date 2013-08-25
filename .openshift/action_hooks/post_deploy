@@ -3,7 +3,7 @@
 # is deployed and started.  This script gets executed directly, so
 # it could be python, php, ruby, etc.
 
-set -x
+set -e
 
 if [ -z $OPENSHIFT_POSTGRESQL_DB_HOST ]; then
     echo 1>&2
