@@ -3,7 +3,8 @@
 ## Setup
 
 Create application with Postgresql and Redis support. There is no in house Redis cartrige at Openshift, so third-party one will be used.
-NOTE: No security updates come with Redis cartridge, have to watch for dangers on your own.
+
+*NOTE: No security updates come with Redis cartridge, have to watch for dangers on your own.*
 
 ```Bash
 $ rhc app create discourse ruby-1.9
