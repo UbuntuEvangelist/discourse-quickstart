@@ -3,6 +3,7 @@
 set -x
 
 #TODO allow to pass application name
+#TODO handle smtp env vars setup (user input password/login)
 
 rhc app create discourse ruby-1.9
 rhc cartridge add postgresql-9.2 -a discourse

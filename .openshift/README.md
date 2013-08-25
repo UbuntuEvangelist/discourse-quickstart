@@ -37,12 +37,6 @@ Now deploy it to the Openshift
 $ git push
 ```
 
-or do all at once
-
-```Bash
-$ ./build.sh
-```
-
 ## Update
 
 To update quickstart you have to add discource remote repository and update your local copy
