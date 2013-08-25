@@ -1,6 +1,6 @@
 defaults: &defaults
   adapter: postgresql
-  database: discourse_production
+  database: <%= ENV['OPENSHIFT_APP_NAME'] %>
   username: <%= ENV['OPENSHIFT_POSTGRESQL_DB_USERNAME'] %>
   password: <%= ENV['OPENSHIFT_POSTGRESQL_DB_PASSWORD'] %>
   host: <%= ENV['OPENSHIFT_POSTGRESQL_DB_HOST'] %>
