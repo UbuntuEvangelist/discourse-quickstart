@@ -1,0 +1,7 @@
+production:
+  uri: redis://<%= ENV['OPENSHIFT_REDIS_HOST'] %>:<%= ENV['OPENSHIFT_REDIS_PORT'] %>
+  host: <%= ENV['OPENSHIFT_REDIS_HOST'] %>
+  port: <%= ENV['OPENSHIFT_REDIS_PORT'] %>
+  password: <%= ENV['REDIS_PASSWORD'] %>
+  db: 0
+  cache_db: 2
