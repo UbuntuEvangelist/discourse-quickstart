@@ -4,21 +4,21 @@
 
 Create application with postgresql support
 
-```Shell
+```Bash
 $ rhc app create discourse ruby-1.9
 $ rhc cartridge add postgresql-9.2 -a discourse
 ```
 
 add quickstart repository upstream and get the code
 
-```Shell
+```Bash
 $ git remote add upstream -m master git@github.com:liquidautumn/discourse-quickstart.git
 $ git pull -s recursive -X theirs upstream master
 ```
 
 Now push it to the Openshift
 
-```Shell
+```Bash
 $ git push
 ```
 
@@ -26,27 +26,27 @@ $ git push
 
 To update quickstart you have to add discource remote repository and update your local copy
 
-```Shell
+```Bash
 $ git remote add discourse git@github.com:discourse/discourse.git
 $ git pull discourse master
 ```
 
 checkout required version to corresponding branch
 
-```Shell
+```Bash
 $ git checkout tags/v0.9.6.1 -b v0.9.6.1
 ```
 
 Now merge it with your master
 
-```Shell
+```Bash
 $ git checkout master
 $ git merge v0.9.6.1
 ```
 
 Push it to discourse-quickstart and you now good to go
 
-```Shell
+```Bash
 $ git push upstream master
 ```
 
