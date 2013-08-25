@@ -12,14 +12,24 @@ $ rhc cartridge add postgresql-9.2 -a discourse
 $ rhc add-cartridge http://cartreflect-claytondev.rhcloud.com/reflect?github=smarterclayton/openshift-redis-cart
 ```
 
-add quickstart repository upstream and get the code
+add quickstart upstream and get the code
 
 ```Bash
 $ git remote add upstream -m master git@github.com:liquidautumn/discourse-quickstart.git
 $ git pull -s recursive -X theirs upstream master
 ```
 
-Now push it to the Openshift
+Update .openshift/smtp.env with valid SMTP (Mandrill) credentials
+
+Just put your valid Mandrill credentials to smtp.env
+If you're about to use different SMTP provider, remember to update config/environments/production.rb.openshift
+Now put smtp.env to openshift:
+
+```Bash
+$ scp .openshift/smtp.env `rhc app show | grep -oP '(?<=SSH:     )[^ ]*'`:app-root/data
+```
+
+Now deploy it to the Openshift
 
 ```Bash
 $ git push
@@ -30,7 +40,6 @@ or do all at once
 ```Bash
 $ ./build.sh
 ```
-
 
 ## Update
 
