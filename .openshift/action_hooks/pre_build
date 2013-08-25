@@ -1,5 +1,5 @@
 pushd "$OPENSHIFT_REPO_DIR" > /dev/null
-[ ! -f Gemfile.lock ] && cp -f "Gemfile.lock.ruby-$OPENSHIFT_RUBY_VERSION" Gemfile.lock
+echo "Create config files..."
 cp config/redis.yml.openshift config/redis.yml
 cp config/database.yml.openshift config/database.yml
 popd > /dev/null
