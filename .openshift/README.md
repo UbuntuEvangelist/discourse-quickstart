@@ -19,13 +19,15 @@ $ git remote add upstream -m master git@github.com:liquidautumn/discourse-quicks
 $ git pull -s recursive -X theirs upstream master
 ```
 
-Update .openshift/smtp.env with valid SMTP (Mandrill) credentials
+Create .openshift/smtp.env with valid SMTP (Mandrill) credentials
 
-Just put your valid Mandrill credentials to smtp.env
-If you're about to use different SMTP provider, remember to update config/environments/production.rb.openshift
-Now put smtp.env to openshift:
+Put your valid Mandrill credentials to smtp.env and put smtp.env to openshift.
+If you're about to use different SMTP provider, remember to update config/environments/production.rb.openshift as well
+
 
 ```Bash
+$ cp .openshift/smtp.env.sample .openshift/smtp.env
+$ nano .openshift/smtp.env
 $ scp .openshift/smtp.env `rhc app show | grep -oP '(?<=SSH:     )[^ ]*'`:app-root/data
 ```
 
