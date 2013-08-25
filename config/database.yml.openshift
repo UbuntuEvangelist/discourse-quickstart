@@ -1,4 +1,4 @@
-production:
+defaults: &defaults
   adapter: postgresql
   database: discourse_production
   username: <%= ENV['OPENSHIFT_POSTGRESQL_DB_USERNAME'] %>
@@ -12,3 +12,19 @@ production:
   #  ###   - restart sidekiq if you change this setting
   #  ###   - rebake all to posts using: `RAILS_ENV=production bundle exec rake posts:rebake`
   #  - production.localhost # Update this to be the domain of your production site
+
+development:
+  <<: *defaults
+
+profile:
+  <<: *defaults
+
+test:
+  <<: *defaults
+  db: 1
+
+staging:
+  <<: *defaults
+
+production:
+  <<: *defaults
