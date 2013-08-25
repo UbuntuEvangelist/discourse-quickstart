@@ -1,15 +1,16 @@
 #This is production configuration for Openshift install, will be copied over production.rb on deploy
 
 Discourse::Application.configure do
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #   :address              => "smtp.sendgrid.net",
-  #   :port                 => 587,
-  #   :domain               => 'YOUR DOMAIN',
-  #   :user_name            => 'YOUR_USER',
-  #   :password             => 'YOUR_PASSWORD',
-  #   :authentication       => 'plain',
-  #   :enable_starttls_auto => true  }
+  #Configure to use Mandrill, require referenced environment variable to be set up in myenv.sh
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :port =>           '587',
+    :address =>        'smtp.mandrillapp.com',
+    :user_name =>      ENV['SMTP_USERNAME'],
+    :password =>       ENV['SMTP_PASSWORD'],
+    :domain =>         'rhcloud.com',
+    :authentication => :plain
+  }
 
   # Settings specified here will take precedence over those in config/application.rb
 
