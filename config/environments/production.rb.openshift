@@ -9,7 +9,8 @@ Discourse::Application.configure do
     :user_name =>      ENV['SMTP_USERNAME'],
     :password =>       ENV['SMTP_PASSWORD'],
     :domain =>         'rhcloud.com',
-    :authentication => :plain
+    :authentication => :login,
+    :enable_starttls_auto => true
   }
 
   # Settings specified here will take precedence over those in config/application.rb
