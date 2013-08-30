@@ -1,8 +1,9 @@
 #This is production configuration for Openshift install, will be copied over production.rb on deploy
 
 Discourse::Application.configure do
-  #Configure to use SES, require referenced environment variable to be set up in myenv.sh
   config.action_mailer.delivery_method = :smtp
+
+  # Amazon SES configuration
   config.action_mailer.smtp_settings = {
     :port =>           '25',
     :address =>        'email-smtp.us-east-1.amazonaws.com',
@@ -12,6 +13,17 @@ Discourse::Application.configure do
     :authentication => :login,
     :enable_starttls_auto => true
   }
+
+  # Sendgrid configuration
+  #config.action_mailer.smtp_settings = {
+  #  :address        => 'smtp.sendgrid.net',
+  #  :port           => '587',
+  #  :authentication => :plain,
+  #  :user_name      => ENV['SMTP_USERNAME'],
+  #  :password       => ENV['SMTP_PASSWORD'],
+  #  :domain         => 'rhcloud.com',
+  #  :enable_starttls_auto => true
+  #}
 
   # Settings specified here will take precedence over those in config/application.rb
 
