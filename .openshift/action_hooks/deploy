@@ -20,6 +20,6 @@ if [ -f "${SIDEKIQ_PIDFILE}" ]; then
 fi
 
 echo "Starting sidekiq..."
-bundle exec "sidekiq -d -e $RAILS_ENV -P '${OPENSHIFT_DATA_DIR}sidekiq.pid' -L '${OPENSHIFT_DATA_DIR}sidekiq.log'"
+bundle exec "sidekiq -d -e production -P '${OPENSHIFT_DATA_DIR}sidekiq.pid' -L '${OPENSHIFT_DATA_DIR}sidekiq.log'"
 
 popd

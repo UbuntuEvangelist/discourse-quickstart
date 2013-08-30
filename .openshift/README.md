@@ -9,7 +9,7 @@ Create application with Postgresql and Redis support. There is no in house Redis
 ```Bash
 $ rhc app create discourse ruby-1.9
 $ rhc cartridge add postgresql-9.2 -a discourse
-$ rhc add-cartridge http://cartreflect-claytondev.rhcloud.com/reflect?github=smarterclayton/openshift-redis-cart
+$ rhc cartridge add http://cartreflect-claytondev.rhcloud.com/reflect?github=smarterclayton/openshift-redis-cart -a discourse
 ```
 
 add quickstart upstream and get the code
@@ -19,10 +19,10 @@ $ git remote add upstream -m master git@github.com:liquidautumn/discourse-quicks
 $ git pull -s recursive -X theirs upstream master
 ```
 
-Create .openshift/smtp.env with valid SMTP (Mandrill) credentials
+Create .openshift/smtp.env with valid SMTP credentials
 
-Put your valid Mandrill credentials to smtp.env and put smtp.env to openshift.
-If you're about to use different SMTP provider, remember to update config/environments/production.rb.openshift as well
+Put your valid SMTP credentials to smtp.env and put smtp.env to openshift.
+Discourse set up to user Amazon SES by default, if you're about to use different SMTP provider, remember to update config/environments/production.rb.openshift
 
 
 ```Bash

@@ -12,8 +12,3 @@ cp config/redis.yml.openshift config/redis.yml
 cp config/database.yml.openshift config/database.yml
 cp config/environments/production.rb.openshift config/environments/production.rb
 popd > /dev/null
-
-pushd "$OPENSHIFT_DATA_DIR" > /dev/null
-echo "Load environment variables..."
-source smtp.env
-popd > /dev/null
