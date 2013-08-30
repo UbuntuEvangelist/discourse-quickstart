@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+
+pushd "$OPENSHIFT_DATA_DIR" > /dev/null
+echo "Load SMTP configuration environment variables...(pre_start_ruby)"
+source ~/app-root/data/smtp.env
+popd > /dev/null
