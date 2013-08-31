@@ -28,6 +28,14 @@ Now deploy it to the Openshift
 $ git push
 ```
 
+## Make yourself admin
+
+Register as plain user first, then add admin flag:
+
+```Bash
+$ ssh `rhc app show | grep -oP '(?<=SSH:     )[^ ]*'` "echo \"UPDATE users SET admin='t' WHERE username='your username';\" | psql -d \$OPENSHIFT_APP_NAME"
+```
+
 ## Update
 
 To update quickstart you have to add discource remote repository and update your local copy
