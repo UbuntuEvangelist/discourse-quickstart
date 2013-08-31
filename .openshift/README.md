@@ -20,17 +20,7 @@ $ git remote add upstream -m master git@github.com:liquidautumn/discourse-quicks
 $ git pull -s recursive -X theirs upstream master
 ```
 
-Create .openshift/smtp.env with valid SMTP credentials
-
-Put your valid SMTP credentials to smtp.env and put smtp.env to openshift.
-Discourse set up to user Amazon SES by default, if you're about to use different SMTP provider, remember to update config/environments/production.rb.openshift
-
-
-```Bash
-$ cp .openshift/smtp.env.sample .openshift/smtp.env
-$ nano .openshift/smtp.env
-$ scp .openshift/smtp.env `rhc app show | grep -oP '(?<=SSH:     )[^ ]*'`:app-root/data
-```
+Before deployment update config/environments/production.rb.openshift with valid SMTP credentials.
 
 Now deploy it to the Openshift
 
