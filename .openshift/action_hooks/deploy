@@ -1,9 +1,8 @@
 #!/bin/bash
 
-set -e
+set -x
 
 pushd ${OPENSHIFT_REPO_DIR} > /dev/null
-
 SIDEKIQ_PIDFILE="${OPENSHIFT_DATA_DIR}sidekiq.pid"
 
 if [ -f "${SIDEKIQ_PIDFILE}" ]; then
@@ -18,8 +17,5 @@ if [ -f "${SIDEKIQ_PIDFILE}" ]; then
     rm $SIDEKIQ_PIDFILE &> /dev/null
   fi
 fi
-
-echo "Starting sidekiq..."
-bundle exec "sidekiq -d -e production -P '${OPENSHIFT_DATA_DIR}sidekiq.pid' -L '${OPENSHIFT_DATA_DIR}sidekiq.log'"
 
 popd
