@@ -30,10 +30,10 @@ $ git push
 
 ## Make yourself admin
 
-Register as plain user first, then add admin flag:
+Register as plain user first, then add admin flag through ssh. You might find your ssh host in `rhc app show` output.
 
 ```Bash
-$ ssh `rhc app show | grep -oP '(?<=SSH:     )[^ ]*'` "echo \"UPDATE users SET admin='t' WHERE username='your username';\" | psql -d \$OPENSHIFT_APP_NAME"
+$ ssh youridappname.rhcloud.com "echo \"UPDATE users SET admin='t' WHERE username='your username';\" | psql -d \$OPENSHIFT_APP_NAME"
 ```
 
 ## Update
