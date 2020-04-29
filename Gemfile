@@ -33,7 +33,7 @@ if rails4?
 end
 
 if rails4?
-  gem 'rails', :git => 'git://github.com/rails/rails.git', :branch => '4-0-stable'
+  gem 'rails', '>= 4.0.0'
   gem 'redis-rails', :git => 'git://github.com/SamSaffron/redis-store.git'
   gem 'rails-observers'
   gem 'actionpack-action_caching'
@@ -59,7 +59,7 @@ gem 'active_model_serializers'
 
 # we had issues with latest, stick to the rev till we figure this out
 # PR that makes it all hang together welcome
-gem 'ember-rails'
+gem 'ember-rails', '>= 0.10.0'
 gem 'ember-source', '1.0.0.rc6.2'
 gem 'handlebars-source', '1.0.12'
 gem 'barber'
@@ -108,8 +108,8 @@ gem 'rest-client'
 gem 'rinku'
 gem 'sanitize'
 gem 'sass'
-gem 'sidekiq'
-gem 'sidekiq-failures'
+gem 'sidekiq', '>= 2.13.0'
+gem 'sidekiq-failures', '>= 0.1.0'
 gem 'sinatra', require: nil
 gem 'slim'  # required for sidekiq-web
 gem 'therubyracer', require: 'v8'
@@ -132,7 +132,7 @@ gem 'discourse_emoji', path: 'vendor/gems/discourse_emoji'
 # allow everywhere for now cause we are allowing asset debugging in prd
 group :assets do
   gem 'sass'
-  gem 'sass-rails'
+  gem 'sass-rails', '>= 4.0.0'
   # Sam: disabling for now, having issues with our jenkins build
   # gem 'turbo-sprockets-rails3'
   gem 'uglifier'
@@ -152,11 +152,11 @@ group :test, :development do
   else
     gem 'fabrication', require: false
   end
-  gem 'qunit-rails'
+  gem 'qunit-rails', '>= 0.0.3'
   gem 'mocha', require: false
   gem 'rb-fsevent', require: RUBY_PLATFORM =~ /darwin/i ? 'rb-fsevent' : false
   gem 'rb-inotify', '~> 0.9', require: RUBY_PLATFORM =~ /linux/i ? 'rb-inotify' : false
-  gem 'rspec-rails', require: false
+  gem 'rspec-rails', '>= 2.13.0', require: false
   gem 'shoulda', require: false
   gem 'simplecov', require: false
   gem 'timecop'
