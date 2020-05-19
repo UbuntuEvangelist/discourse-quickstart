@@ -33,33 +33,33 @@ if rails4?
 end
 
 if rails4?
-  gem 'rails', :git => 'git://github.com/rails/rails.git', :branch => '4-0-stable'
-  gem 'redis-rails', :git => 'git://github.com/SamSaffron/redis-store.git'
+  gem 'rails', '>= 5.2.4.3', :git => 'git://github.com/rails/rails.git', :branch => '4-0-stable'
+  gem 'redis-rails', '>= 5.0.0', '>= 5.0.0', :git => 'git://github.com/SamSaffron/redis-store.git'
   gem 'rails-observers'
   gem 'actionpack-action_caching'
-  gem 'seed-fu' , github: 'mbleigh/seed-fu'
+  gem 'seed-fu', '>= 2.3.6' , '>= 2.3.6', github: 'mbleigh/seed-fu'
 else
   # we had pain with the 3.2.13 upgrade so monkey patch the security fix
   # next time around we hope to upgrade
-  gem 'rails', '3.2.12'
+  gem 'rails', '5.2.4.3'
   gem 'strong_parameters' # remove when we upgrade to Rails 4
   # we are using a custom sprockets repo to work around: https://github.com/rails/rails/issues/8099#issuecomment-16137638
   # REVIEW EVERY RELEASE
   gem 'sprockets', git: 'https://github.com/SamSaffron/sprockets.git', branch: 'rails-compat'
   gem 'redis-rails'
   gem 'seed-fu'
-  gem 'activerecord-postgres-hstore'
-  gem 'active_attr'
+  gem 'activerecord-postgres-hstore', '>= 0.7.6'
+  gem 'active_attr', '>= 0.10.3'
 end
 
 gem 'hiredis'
 gem 'redis', :require => ["redis", "redis/connection/hiredis"]
 
-gem 'active_model_serializers'
+gem 'active_model_serializers', '>= 0.8.1'
 
 # we had issues with latest, stick to the rev till we figure this out
 # PR that makes it all hang together welcome
-gem 'ember-rails'
+gem 'ember-rails', '>= 0.10.0'
 gem 'ember-source', '1.0.0.rc6.2'
 gem 'handlebars-source', '1.0.12'
 gem 'barber'
@@ -132,7 +132,7 @@ gem 'discourse_emoji', path: 'vendor/gems/discourse_emoji'
 # allow everywhere for now cause we are allowing asset debugging in prd
 group :assets do
   gem 'sass'
-  gem 'sass-rails'
+  gem 'sass-rails', '>= 5.0.5'
   # Sam: disabling for now, having issues with our jenkins build
   # gem 'turbo-sprockets-rails3'
   gem 'uglifier'
@@ -152,12 +152,12 @@ group :test, :development do
   else
     gem 'fabrication', require: false
   end
-  gem 'qunit-rails'
+  gem 'qunit-rails', '>= 0.0.3'
   gem 'mocha', require: false
   gem 'rb-fsevent', require: RUBY_PLATFORM =~ /darwin/i ? 'rb-fsevent' : false
   gem 'rb-inotify', '~> 0.9', require: RUBY_PLATFORM =~ /linux/i ? 'rb-inotify' : false
-  gem 'rspec-rails', require: false
-  gem 'shoulda', require: false
+  gem 'rspec-rails', '>= 2.13.0', require: false
+  gem 'shoulda', '>= 3.4.0', require: false
   gem 'simplecov', require: false
   gem 'timecop'
   gem 'rspec-given'
