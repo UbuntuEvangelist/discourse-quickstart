@@ -33,16 +33,16 @@ if rails4?
 end
 
 if rails4?
-  gem 'rails', :git => 'git://github.com/rails/rails.git', :branch => '4-0-stable'
-  gem 'redis-rails', :git => 'git://github.com/SamSaffron/redis-store.git'
+  gem 'rails', '>= 5.0.0', :git => 'git://github.com/rails/rails.git', :branch => '4-0-stable'
+  gem 'redis-rails', '>= 5.0.0', '>= 5.0.0', :git => 'git://github.com/SamSaffron/redis-store.git'
   gem 'rails-observers'
   gem 'actionpack-action_caching'
   gem 'seed-fu' , github: 'mbleigh/seed-fu'
 else
   # we had pain with the 3.2.13 upgrade so monkey patch the security fix
   # next time around we hope to upgrade
-  gem 'rails', '3.2.12'
-  gem 'strong_parameters' # remove when we upgrade to Rails 4
+  gem 'rails', '5.0.0'
+  gem 'strong_parameters' , '>= 0.2.1' # remove when we upgrade to Rails 4
   # we are using a custom sprockets repo to work around: https://github.com/rails/rails/issues/8099#issuecomment-16137638
   # REVIEW EVERY RELEASE
   gem 'sprockets', git: 'https://github.com/SamSaffron/sprockets.git', branch: 'rails-compat'
@@ -59,7 +59,7 @@ gem 'active_model_serializers'
 
 # we had issues with latest, stick to the rev till we figure this out
 # PR that makes it all hang together welcome
-gem 'ember-rails'
+gem 'ember-rails', '>= 0.10.0'
 gem 'ember-source', '1.0.0.rc6.2'
 gem 'handlebars-source', '1.0.12'
 gem 'barber'
@@ -90,15 +90,15 @@ gem 'image_sorcery'
 gem 'multi_json'
 gem 'mustache'
 gem 'nokogiri'
-gem 'omniauth'
-gem 'omniauth-openid'
+gem 'omniauth', '>= 1.1.4'
+gem 'omniauth-openid', '>= 1.0.1'
 gem 'openid-redis-store'
-gem 'omniauth-facebook'
-gem 'omniauth-twitter'
-gem 'omniauth-github'
-gem 'omniauth-oauth2', require: false
+gem 'omniauth-facebook', '>= 1.6.0'
+gem 'omniauth-twitter', '>= 0.0.16'
+gem 'omniauth-github', '>= 1.1.0'
+gem 'omniauth-oauth2', '>= 1.2.0', require: false
 gem 'omniauth-browserid', git: 'https://github.com/callahad/omniauth-browserid.git', branch: 'observer_api'
-gem 'omniauth-cas'
+gem 'omniauth-cas', '>= 1.0.1'
 gem 'oj'
 gem 'pg'
 gem 'rake'
@@ -109,11 +109,11 @@ gem 'rinku'
 gem 'sanitize'
 gem 'sass'
 gem 'sidekiq'
-gem 'sidekiq-failures'
-gem 'sinatra', require: nil
+gem 'sidekiq-failures', '>= 0.1.0'
+gem 'sinatra', '>= 2.0.0', require: nil
 gem 'slim'  # required for sidekiq-web
 gem 'therubyracer', require: 'v8'
-gem 'thin', require: false
+gem 'thin', '>= 1.5.1', require: false
 gem 'diffy', '>= 3.0', require: false
 gem 'highline', require: false
 
@@ -132,7 +132,7 @@ gem 'discourse_emoji', path: 'vendor/gems/discourse_emoji'
 # allow everywhere for now cause we are allowing asset debugging in prd
 group :assets do
   gem 'sass'
-  gem 'sass-rails'
+  gem 'sass-rails', '>= 5.0.5'
   # Sam: disabling for now, having issues with our jenkins build
   # gem 'turbo-sprockets-rails3'
   gem 'uglifier'
@@ -152,11 +152,11 @@ group :test, :development do
   else
     gem 'fabrication', require: false
   end
-  gem 'qunit-rails'
+  gem 'qunit-rails', '>= 0.0.3'
   gem 'mocha', require: false
   gem 'rb-fsevent', require: RUBY_PLATFORM =~ /darwin/i ? 'rb-fsevent' : false
   gem 'rb-inotify', '~> 0.9', require: RUBY_PLATFORM =~ /linux/i ? 'rb-inotify' : false
-  gem 'rspec-rails', require: false
+  gem 'rspec-rails', '>= 2.13.0', require: false
   gem 'shoulda', require: false
   gem 'simplecov', require: false
   gem 'timecop'
@@ -187,15 +187,15 @@ gem 'lru_redux'
 # IMPORTANT: mini profiler monkey patches, so it better be required last
 #  If you want to amend mini profiler to do the monkey patches in the railstie
 #  we are open to it. by deferring require to the initializer we can configure disourse installs without it
-gem 'rack-mini-profiler', '0.1.29', require: false  # require: false #, git: 'git://github.com/SamSaffron/MiniProfiler'
+gem 'rack-mini-profiler', '0.1.29', require: false # require: false #, git: 'git://github.com/SamSaffron/MiniProfiler'
 
 # used for caching, optional
 # redis-rack-cache is missing a sane expiry policy, it hogs redis
 # https://github.com/jodosha/redis-store/pull/183
 gem 'redis-rack-cache', git: 'https://github.com/SamSaffron/redis-rack-cache.git', require: false
-gem 'rack-cache', require: false
-gem 'rack-cors', require: false
-gem 'unicorn', require: false
+gem 'rack-cache', '>= 1.2', require: false
+gem 'rack-cors', '>= 0.2.7', require: false
+gem 'unicorn', '>= 4.6.3', require: false
 
 # perftools only works on 1.9 atm
 group :profile do
