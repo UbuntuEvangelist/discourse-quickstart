@@ -70,7 +70,7 @@ gem 'message_bus', git: 'https://github.com/SamSaffron/message_bus'
 gem 'rails_multisite', path: 'vendor/gems/rails_multisite'
 gem 'simple_handlebars_rails', path: 'vendor/gems/simple_handlebars_rails'
 
-gem 'redcarpet', require: false
+gem 'redcarpet', '>= 3.5.1', require: false
 gem 'airbrake', '3.1.2', require: false # errbit is broken with 3.1.3 for now
 gem 'sidetiq', '>= 0.3.6'
 gem 'eventmachine'
@@ -90,13 +90,13 @@ gem 'image_sorcery'
 gem 'multi_json'
 gem 'mustache'
 gem 'nokogiri'
-gem 'omniauth'
+gem 'omniauth', '>= 2.0.0'
 gem 'omniauth-openid'
 gem 'openid-redis-store'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '>= 1.6.0'
 gem 'omniauth-twitter'
-gem 'omniauth-github'
-gem 'omniauth-oauth2', require: false
+gem 'omniauth-github', '>= 2.0.0'
+gem 'omniauth-oauth2', '>= 1.7.1', require: false
 gem 'omniauth-browserid', git: 'https://github.com/callahad/omniauth-browserid.git', branch: 'observer_api'
 gem 'omniauth-cas'
 gem 'oj'
