@@ -104,7 +104,7 @@ gem 'pg'
 gem 'rake'
 
 
-gem 'rest-client'
+gem 'rest-client', '>= 1.8.0'
 gem 'rinku'
 gem 'sanitize'
 gem 'sass'
