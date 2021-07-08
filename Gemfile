@@ -98,7 +98,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-github'
 gem 'omniauth-oauth2', require: false
 gem 'omniauth-browserid', git: 'https://github.com/callahad/omniauth-browserid.git', branch: 'observer_api'
-gem 'omniauth-cas'
+gem 'omniauth-cas', '>= 1.0.1'
 gem 'oj'
 gem 'pg'
 gem 'rake'
