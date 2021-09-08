@@ -77,7 +77,7 @@ gem 'eventmachine'
 gem 'fast_xs'
 gem 'fast_xor', git: 'https://github.com/CodeMonkeySteve/fast_xor.git'
 gem 'fastimage'
-gem 'fog', require: false
+gem 'fog', '>= 1.14.0', require: false
 
 gem 'email_reply_parser', git: 'https://github.com/lawrencepit/email_reply_parser.git'
 
@@ -89,7 +89,7 @@ gem 'image_optim'
 gem 'image_sorcery'
 gem 'multi_json'
 gem 'mustache'
-gem 'nokogiri'
+gem 'nokogiri', '>= 1.8.2'
 gem 'omniauth'
 gem 'omniauth-openid'
 gem 'openid-redis-store'
@@ -98,7 +98,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-github'
 gem 'omniauth-oauth2', require: false
 gem 'omniauth-browserid', git: 'https://github.com/callahad/omniauth-browserid.git', branch: 'observer_api'
-gem 'omniauth-cas'
+gem 'omniauth-cas', '>= 1.0.1'
 gem 'oj'
 gem 'pg'
 gem 'rake'
@@ -106,7 +106,7 @@ gem 'rake'
 
 gem 'rest-client'
 gem 'rinku'
-gem 'sanitize'
+gem 'sanitize', '>= 2.0.5'
 gem 'sass'
 gem 'sidekiq'
 gem 'sidekiq-failures'
@@ -167,7 +167,7 @@ group :test, :development do
 end
 
 group :development do
-  gem 'better_errors'
+  gem 'better_errors', '>= 2.8.0'
   gem 'binding_of_caller'
   gem 'librarian', '>= 0.0.25', require: false
   # https://github.com/ctran/annotate_models/pull/106
