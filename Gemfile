@@ -106,7 +106,7 @@ gem 'rake'
 
 gem 'rest-client'
 gem 'rinku'
-gem 'sanitize'
+gem 'sanitize', '>= 2.0.5'
 gem 'sass'
 gem 'sidekiq'
 gem 'sidekiq-failures'
