@@ -110,7 +110,7 @@ gem 'sanitize'
 gem 'sass'
 gem 'sidekiq'
 gem 'sidekiq-failures'
-gem 'sinatra', require: nil
+gem 'sinatra', '>= 2.2.0', require: nil
 gem 'slim'  # required for sidekiq-web
 gem 'therubyracer', require: 'v8'
 gem 'thin', require: false
