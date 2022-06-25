@@ -114,7 +114,7 @@ gem 'sinatra', require: nil
 gem 'slim'  # required for sidekiq-web
 gem 'therubyracer', require: 'v8'
 gem 'thin', require: false
-gem 'diffy', '>= 3.0', require: false
+gem 'diffy', '>= 3.4.1', require: false
 gem 'highline', require: false
 
 # Gem that enables support for plugins. It is required.
