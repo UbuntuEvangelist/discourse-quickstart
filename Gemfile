@@ -33,7 +33,7 @@ if rails4?
 end
 
 if rails4?
-  gem 'rails', :git => 'git://github.com/rails/rails.git', :branch => '4-0-stable'
+  gem 'rails', '>= 5.2.8.1', :git => 'git://github.com/rails/rails.git', :branch => '4-0-stable'
   gem 'redis-rails', :git => 'git://github.com/SamSaffron/redis-store.git'
   gem 'rails-observers'
   gem 'actionpack-action_caching'
@@ -41,7 +41,7 @@ if rails4?
 else
   # we had pain with the 3.2.13 upgrade so monkey patch the security fix
   # next time around we hope to upgrade
-  gem 'rails', '3.2.12'
+  gem 'rails', '5.2.8.1'
   gem 'strong_parameters' # remove when we upgrade to Rails 4
   # we are using a custom sprockets repo to work around: https://github.com/rails/rails/issues/8099#issuecomment-16137638
   # REVIEW EVERY RELEASE
