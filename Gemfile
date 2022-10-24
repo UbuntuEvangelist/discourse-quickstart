@@ -93,10 +93,10 @@ gem 'nokogiri'
 gem 'omniauth'
 gem 'omniauth-openid'
 gem 'openid-redis-store'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '>= 1.6.0'
 gem 'omniauth-twitter'
 gem 'omniauth-github'
-gem 'omniauth-oauth2', require: false
+gem 'omniauth-oauth2', '>= 1.2.0', require: false
 gem 'omniauth-browserid', git: 'https://github.com/callahad/omniauth-browserid.git', branch: 'observer_api'
 gem 'omniauth-cas'
 gem 'oj'
