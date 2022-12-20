@@ -49,7 +49,7 @@ else
   gem 'redis-rails'
   gem 'seed-fu'
   gem 'activerecord-postgres-hstore'
-  gem 'active_attr'
+  gem 'active_attr', '>= 0.15.3'
 end
 
 gem 'hiredis'
