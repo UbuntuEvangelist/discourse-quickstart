@@ -33,15 +33,15 @@ if rails4?
 end
 
 if rails4?
-  gem 'rails', :git => 'git://github.com/rails/rails.git', :branch => '4-0-stable'
-  gem 'redis-rails', :git => 'git://github.com/SamSaffron/redis-store.git'
+  gem 'rails', '>= 6.1.7.1', :git => 'git://github.com/rails/rails.git', :branch => '4-0-stable'
+  gem 'redis-rails', '>= 5.0.2', '>= 5.0.2', :git => 'git://github.com/SamSaffron/redis-store.git'
   gem 'rails-observers'
   gem 'actionpack-action_caching'
-  gem 'seed-fu' , github: 'mbleigh/seed-fu'
+  gem 'seed-fu', '>= 2.3.6' , '>= 2.3.6', github: 'mbleigh/seed-fu'
 else
   # we had pain with the 3.2.13 upgrade so monkey patch the security fix
   # next time around we hope to upgrade
-  gem 'rails', '3.2.12'
+  gem 'rails', '6.1.7.1'
   gem 'strong_parameters' # remove when we upgrade to Rails 4
   # we are using a custom sprockets repo to work around: https://github.com/rails/rails/issues/8099#issuecomment-16137638
   # REVIEW EVERY RELEASE
@@ -49,7 +49,7 @@ else
   gem 'redis-rails'
   gem 'seed-fu'
   gem 'activerecord-postgres-hstore'
-  gem 'active_attr'
+  gem 'active_attr', '>= 0.15.1'
 end
 
 gem 'hiredis'
@@ -132,7 +132,7 @@ gem 'discourse_emoji', path: 'vendor/gems/discourse_emoji'
 # allow everywhere for now cause we are allowing asset debugging in prd
 group :assets do
   gem 'sass'
-  gem 'sass-rails'
+  gem 'sass-rails', '>= 5.0.8'
   # Sam: disabling for now, having issues with our jenkins build
   # gem 'turbo-sprockets-rails3'
   gem 'uglifier'
