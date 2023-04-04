@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 group :test do
-  gem 'rails'  
+  gem 'rails'  , '>= 6.1.7.3'
   gem 'rspec'  
   gem 'mocha'
 end
