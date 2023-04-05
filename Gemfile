@@ -33,15 +33,15 @@ if rails4?
 end
 
 if rails4?
-  gem 'rails', :git => 'git://github.com/rails/rails.git', :branch => '4-0-stable'
-  gem 'redis-rails', :git => 'git://github.com/SamSaffron/redis-store.git'
+  gem 'rails', '>= 6.1.7.3', :git => 'git://github.com/rails/rails.git', :branch => '4-0-stable'
+  gem 'redis-rails', '>= 5.0.2', '>= 5.0.2', :git => 'git://github.com/SamSaffron/redis-store.git'
   gem 'rails-observers'
   gem 'actionpack-action_caching'
-  gem 'seed-fu' , github: 'mbleigh/seed-fu'
+  gem 'seed-fu', '>= 2.3.6' , '>= 2.3.6', github: 'mbleigh/seed-fu'
 else
   # we had pain with the 3.2.13 upgrade so monkey patch the security fix
   # next time around we hope to upgrade
-  gem 'rails', '3.2.12'
+  gem 'rails', '6.1.7.3'
   gem 'strong_parameters' # remove when we upgrade to Rails 4
   # we are using a custom sprockets repo to work around: https://github.com/rails/rails/issues/8099#issuecomment-16137638
   # REVIEW EVERY RELEASE
@@ -49,7 +49,7 @@ else
   gem 'redis-rails'
   gem 'seed-fu'
   gem 'activerecord-postgres-hstore'
-  gem 'active_attr'
+  gem 'active_attr', '>= 0.15.3'
 end
 
 gem 'hiredis'
@@ -60,8 +60,8 @@ gem 'active_model_serializers'
 # we had issues with latest, stick to the rev till we figure this out
 # PR that makes it all hang together welcome
 gem 'ember-rails'
-gem 'ember-source', '1.0.0.rc6.2'
-gem 'handlebars-source', '1.0.12'
+gem 'ember-source', '1.10.0'
+gem 'handlebars-source', '4.0.0'
 gem 'barber'
 
 gem 'vestal_versions', git: 'https://github.com/zhangyuan/vestal_versions'
@@ -70,14 +70,14 @@ gem 'message_bus', git: 'https://github.com/SamSaffron/message_bus'
 gem 'rails_multisite', path: 'vendor/gems/rails_multisite'
 gem 'simple_handlebars_rails', path: 'vendor/gems/simple_handlebars_rails'
 
-gem 'redcarpet', require: false
+gem 'redcarpet', '>= 3.5.1', require: false
 gem 'airbrake', '3.1.2', require: false # errbit is broken with 3.1.3 for now
-gem 'sidetiq', '>= 0.3.6'
+gem 'sidetiq', '>= 0.5.0'
 gem 'eventmachine'
 gem 'fast_xs'
 gem 'fast_xor', git: 'https://github.com/CodeMonkeySteve/fast_xor.git'
 gem 'fastimage'
-gem 'fog', require: false
+gem 'fog', '>= 1.21.0', require: false
 
 gem 'email_reply_parser', git: 'https://github.com/lawrencepit/email_reply_parser.git'
 
@@ -89,32 +89,32 @@ gem 'image_optim'
 gem 'image_sorcery'
 gem 'multi_json'
 gem 'mustache'
-gem 'nokogiri'
-gem 'omniauth'
-gem 'omniauth-openid'
+gem 'nokogiri', '>= 1.13.9'
+gem 'omniauth', '>= 2.0.0'
+gem 'omniauth-openid', '>= 2.0.1'
 gem 'openid-redis-store'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '>= 1.6.0'
 gem 'omniauth-twitter'
-gem 'omniauth-github'
-gem 'omniauth-oauth2', require: false
+gem 'omniauth-github', '>= 2.0.0'
+gem 'omniauth-oauth2', '>= 1.7.1', require: false
 gem 'omniauth-browserid', git: 'https://github.com/callahad/omniauth-browserid.git', branch: 'observer_api'
-gem 'omniauth-cas'
+gem 'omniauth-cas', '>= 1.1.1'
 gem 'oj'
 gem 'pg'
-gem 'rake'
+gem 'rake', '>= 12.3.3'
 
 
-gem 'rest-client'
+gem 'rest-client', '>= 1.8.0'
 gem 'rinku'
-gem 'sanitize'
+gem 'sanitize', '>= 4.6.3'
 gem 'sass'
-gem 'sidekiq'
+gem 'sidekiq', '>= 6.2.1'
 gem 'sidekiq-failures'
-gem 'sinatra', require: nil
+gem 'sinatra', '>= 2.2.3', require: nil
 gem 'slim'  # required for sidekiq-web
 gem 'therubyracer', require: 'v8'
 gem 'thin', require: false
-gem 'diffy', '>= 3.0', require: false
+gem 'diffy', '>= 3.4.1', require: false
 gem 'highline', require: false
 
 # Gem that enables support for plugins. It is required.
@@ -132,10 +132,10 @@ gem 'discourse_emoji', path: 'vendor/gems/discourse_emoji'
 # allow everywhere for now cause we are allowing asset debugging in prd
 group :assets do
   gem 'sass'
-  gem 'sass-rails'
+  gem 'sass-rails', '>= 5.0.8'
   # Sam: disabling for now, having issues with our jenkins build
   # gem 'turbo-sprockets-rails3'
-  gem 'uglifier'
+  gem 'uglifier', '>= 2.7.2'
 end
 
 group :test do
@@ -155,7 +155,7 @@ group :test, :development do
   gem 'qunit-rails'
   gem 'mocha', require: false
   gem 'rb-fsevent', require: RUBY_PLATFORM =~ /darwin/i ? 'rb-fsevent' : false
-  gem 'rb-inotify', '~> 0.9', require: RUBY_PLATFORM =~ /linux/i ? 'rb-inotify' : false
+  gem 'rb-inotify', '~> 0.9', '>= 0.9.0', require: RUBY_PLATFORM =~ /linux/i ? 'rb-inotify' : false
   gem 'rspec-rails', require: false
   gem 'shoulda', require: false
   gem 'simplecov', require: false
@@ -167,7 +167,7 @@ group :test, :development do
 end
 
 group :development do
-  gem 'better_errors'
+  gem 'better_errors', '>= 2.8.0'
   gem 'binding_of_caller'
   gem 'librarian', '>= 0.0.25', require: false
   # https://github.com/ctran/annotate_models/pull/106
@@ -187,14 +187,14 @@ gem 'lru_redux'
 # IMPORTANT: mini profiler monkey patches, so it better be required last
 #  If you want to amend mini profiler to do the monkey patches in the railstie
 #  we are open to it. by deferring require to the initializer we can configure disourse installs without it
-gem 'rack-mini-profiler', '0.1.29', require: false  # require: false #, git: 'git://github.com/SamSaffron/MiniProfiler'
+gem 'rack-mini-profiler', '0.10.1', require: false # require: false #, git: 'git://github.com/SamSaffron/MiniProfiler'
 
 # used for caching, optional
 # redis-rack-cache is missing a sane expiry policy, it hogs redis
 # https://github.com/jodosha/redis-store/pull/183
 gem 'redis-rack-cache', git: 'https://github.com/SamSaffron/redis-rack-cache.git', require: false
 gem 'rack-cache', require: false
-gem 'rack-cors', require: false
+gem 'rack-cors', '>= 1.0.5', require: false
 gem 'unicorn', require: false
 
 # perftools only works on 1.9 atm
