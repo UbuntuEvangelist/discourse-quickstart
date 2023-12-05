@@ -34,7 +34,7 @@ end
 
 if rails4?
   gem 'rails', :git => 'git://github.com/rails/rails.git', :branch => '4-0-stable'
-  gem 'redis-rails', :git => 'git://github.com/SamSaffron/redis-store.git'
+  gem 'redis-rails', '>= 5.0.2', '>= 5.0.2', :git => 'git://github.com/SamSaffron/redis-store.git'
   gem 'rails-observers'
   gem 'actionpack-action_caching'
   gem 'seed-fu' , github: 'mbleigh/seed-fu'
