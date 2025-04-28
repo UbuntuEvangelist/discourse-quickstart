@@ -77,7 +77,7 @@ gem 'eventmachine'
 gem 'fast_xs'
 gem 'fast_xor', git: 'https://github.com/CodeMonkeySteve/fast_xor.git'
 gem 'fastimage'
-gem 'fog', require: false
+gem 'fog', '>= 1.37.0', require: false
 
 gem 'email_reply_parser', git: 'https://github.com/lawrencepit/email_reply_parser.git'
 
@@ -89,7 +89,7 @@ gem 'image_optim'
 gem 'image_sorcery'
 gem 'multi_json'
 gem 'mustache'
-gem 'nokogiri'
+gem 'nokogiri', '>= 1.18.8'
 gem 'omniauth'
 gem 'omniauth-openid'
 gem 'openid-redis-store'
