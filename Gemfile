@@ -48,7 +48,7 @@ else
   gem 'sprockets', git: 'https://github.com/SamSaffron/sprockets.git', branch: 'rails-compat'
   gem 'redis-rails'
   gem 'seed-fu'
-  gem 'activerecord-postgres-hstore'
+  gem 'activerecord-postgres-hstore', '>= 0.7.7'
   gem 'active_attr'
 end
 
